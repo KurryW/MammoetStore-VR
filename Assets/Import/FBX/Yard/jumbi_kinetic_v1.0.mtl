@@ -1,0 +1,102 @@
+# Wavefront material file
+# Created with Visionworkplace.com product
+newmtl AutoCAD_Color_Index_250
+Ka 0.2 0.2 0.2
+Kd 0.2 0.2 0.2
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_7
+Ka 1 1 1
+Kd 1 1 1
+Ks 0 0 0
+d 1
+newmtl material_2
+Ka 0 0.4313726 0.6862745
+Kd 0 0.4313726 0.6862745
+Ks 0 0 0
+d 1
+newmtl material_3
+Ka 0.8235294 1 0
+Kd 0.8235294 1 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_1
+Ka 1 0 0
+Kd 1 0 0
+Ks 0 0 0
+d 1
+newmtl material_5
+Ka 0 0 0.5019608
+Kd 0 0 0.5019608
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_5
+Ka 0 0 1
+Kd 0 0 1
+Ks 0 0 0
+d 1
+newmtl material_7
+Ka 0.2470588 0.7254902 1
+Kd 0.2470588 0.7254902 1
+Ks 0 0 0
+d 1
+newmtl material_8
+Ka 0.7490196 0.7490196 0.7490196
+Kd 0.7490196 0.7490196 0.7490196
+Ks 0 0 0
+d 1
+newmtl material_9
+Ka 0.8980392 0.3254902 0
+Kd 0.8980392 0.3254902 0
+Ks 0 0 0
+d 1
+newmtl material_10
+Ka 0.9372549 0.227451 0.09803922
+Kd 0.9372549 0.227451 0.09803922
+Ks 0 0 0
+d 1
+newmtl material_11
+Ka 0.9333333 0.5490196 0.3333333
+Kd 0.9333333 0.5490196 0.3333333
+Ks 0 0 0
+d 1
+newmtl material_12
+Ka 0.5019608 1 1
+Kd 0.5019608 1 1
+Ks 0 0 0
+d 1
+newmtl material_13
+Ka 0 0.3529412 0.6196079
+Kd 0 0.3529412 0.6196079
+Ks 0 0 0
+d 1
+newmtl material_14
+Ka 0 0.2509804 1
+Kd 0 0.2509804 1
+Ks 0 0 0
+d 1
+newmtl material_15
+Ka 0.003921569 0.5411765 0.2941177
+Kd 0.003921569 0.5411765 0.2941177
+Ks 0 0 0
+d 1
+newmtl material_16
+Ka 0.7568628 0 0.1607843
+Kd 0.7568628 0 0.1607843
+Ks 0 0 0
+d 1
+newmtl material_17
+Ka 0.945098 0.9254902 0.8823529
+Kd 0.945098 0.9254902 0.8823529
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_2
+Ka 1 1 0
+Kd 1 1 0
+Ks 0 0 0
+d 1
+newmtl material_19
+Ka 1 1 0.3333333
+Kd 1 1 0.3333333
+Ks 0 0 0
+d 1

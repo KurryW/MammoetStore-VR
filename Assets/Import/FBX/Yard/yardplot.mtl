@@ -1,0 +1,72 @@
+# Wavefront material file
+# Created with Visionworkplace.com product
+newmtl AutoCAD_Color_Index_3
+Ka 0 1 0
+Kd 0 1 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_253
+Ka 0.68 0.68 0.68
+Kd 0.68 0.68 0.68
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_9
+Ka 0.753 0.753 0.753
+Kd 0.753 0.753 0.753
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_1
+Ka 1 0 0
+Kd 1 0 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_6
+Ka 1 0 1
+Kd 1 0 1
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_4
+Ka 0 1 1
+Kd 0 1 1
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_10
+Ka 1 0 0
+Kd 1 0 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_92
+Ka 0 0.8 0
+Kd 0 0.8 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_210
+Ka 1 0 1
+Kd 1 0 1
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_30
+Ka 1 0.5 0
+Kd 1 0.5 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_7
+Ka 1 1 1
+Kd 1 1 1
+Ks 0 0 0
+d 1
+newmtl material_11
+Ka 0 0 0
+Kd 0 0 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_2
+Ka 1 1 0
+Kd 1 1 0
+Ks 0 0 0
+d 1
+newmtl AutoCAD_Color_Index_8
+Ka 0.5 0.5 0.5
+Kd 0.5 0.5 0.5
+Ks 0 0 0
+d 1
