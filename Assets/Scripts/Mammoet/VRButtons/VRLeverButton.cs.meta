@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b5b06c621e185ec489bdfe9bc51903ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - activateInputActionLeft: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  - activateInputActionRight: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  - highlightMaterial: {fileID: 2100000, guid: 3c643a23c0e2b2f4b9a42642759bc718, type: 2}
+  - lockedHighlightMaterial: {fileID: 2100000, guid: 68d3d20c654f9fb41bec8419a9769a67, type: 2}
+  - rendererToHighligt: {instanceID: 0}
+  - pivot: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
