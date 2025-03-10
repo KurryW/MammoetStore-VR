@@ -1,0 +1,127 @@
+{
+    "name": "NewInputControls",
+    "maps": [
+        {
+            "name": "Crane",
+            "id": "d9b4e01b-aa1b-4c03-88d1-e27efd7d0acf",
+            "actions": [
+                {
+                    "name": "Slew",
+                    "type": "Value",
+                    "id": "0001480a-cef3-4413-a005-675471294e1a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Hoist",
+                    "type": "Value",
+                    "id": "04f20be1-981d-47e8-8433-1ab80b34452e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "07ebdbd6-f3a9-4973-9d10-2b60d8676662",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Test",
+                    "type": "Button",
+                    "id": "c4a57bdc-cf03-44b2-8843-ca2dea1cc335",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c9389c9d-c2b0-47ea-90e2-7ebb8e487e97",
+                    "path": "<XRInputV1::HTC::HTCViveFocus3ControllerOpenXR>{LeftHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slew",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18501706-c5ad-4d3f-802d-a1c4a9e72537",
+                    "path": "<XRInputV1::HTC::HTCViveFocus3ControllerOpenXR>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hoist",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c786114a-9970-4b46-8997-73d5905f0bff",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "ae49d558-4368-45ad-85e8-8c1f8eb5a2ee",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "02e4101d-b18a-4d39-9a56-204344b5118e",
+                    "path": "<ViveFocus3Controller>/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "e9769e6f-2fcc-42ca-b9f6-6bdf6db20842",
+                    "path": "<ViveFocus3Controller>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "10ee5e8a-9c26-4677-9388-240aea7230c4",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
