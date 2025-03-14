@@ -1,36 +1,34 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CraneControls : MonoBehaviour
 {
 	#region Variables
 	[SerializeField] private Transform _slewObject = null;
 	[SerializeField] private Transform _hoistObject = null;
+	[SerializeField] private Transform _hook = null;
 
 	[SerializeField] private float _slewFactor = .5f;
 	[SerializeField] private float _hoistFactor = .5f;
+	[SerializeField] private float _hookRotateFactor = .5f;
+	[SerializeField] private float _initialHoistPosition = 5;
+	[SerializeField] private float _initialSlewingRotation = 0;
+	[SerializeField] private float _initialHookRotation = 0;
+	
 	[SerializeField] private Transform _groundIndicatorBlock = null;
+	[SerializeField] private Transform test = null;
 
-	public NewInputControls InputControls { get; private set; }
+	public InputControls InputControls { get; private set; }
 	#endregion
 
 	#region Unity built-in methods
-	private void OnEnable()
+	private void Start()
 	{
-		InputControls = new NewInputControls();
+		InputControls = new InputControls();
 		InputControls.Crane.Enable();
 		InputControls.Crane.Reset.performed += Reset_performed;
-		InputControls.Crane.Test.performed +=Test_performed;
 	}
-
-	private void Test_performed(InputAction.CallbackContext context)
-	{
-		print("Test");
-	}
-
 	private void Update()
 	{
 		// slew, limit between -25 & +60 deg
@@ -48,7 +46,7 @@ public class CraneControls : MonoBehaviour
 			{
 				_slewObject.rotation *= Quaternion.Euler(0, _slewFactor * slewInput, 0);
 			}
-			else
+			else 
 				print(currentAngle); // debug
 		}
 
@@ -61,18 +59,25 @@ public class CraneControls : MonoBehaviour
 		{
 			_hoistObject.position += new Vector3(0, _hoistFactor * hoistBothInput, 0);
 		}
-	}
-	private void OnDisable()
+
+        // hookrotate, no limit
+        float hookRotateInput = InputControls.Crane.HookRotate.ReadValue<float>();
+        if (hookRotateInput != 0)
+        {
+            _hook.rotation *= Quaternion.Euler(0, _hookRotateFactor * hookRotateInput, 0);
+        }
+    }
+	private void OnDestroy()
 	{
 		InputControls.Crane.Disable();
 		InputControls.Crane.Reset.performed -= Reset_performed;
 	}
-	#endregion
+    #endregion
 
-	private void Reset_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-	{
-		_slewObject.rotation = Quaternion.identity;
-		_hoistObject.localPosition = new Vector3(0, -149, 0);
-	}
-
+    private void Reset_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+		_slewObject.localRotation = Quaternion.Euler(0,_initialSlewingRotation,0);
+        _hoistObject.localPosition =new Vector3(0, _initialHoistPosition, 0);
+        _hook.localRotation = Quaternion.Euler(0, _initialHookRotation, 0);
+    }
 }
