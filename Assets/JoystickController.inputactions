@@ -1,0 +1,96 @@
+{
+    "name": "JoystickController",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "c222bfe8-21c2-4e7c-989e-f101e61b1b63",
+            "actions": [
+                {
+                    "name": "Rotate PTC",
+                    "type": "Value",
+                    "id": "1b781cbd-a985-4747-a493-bc7ca19941dc",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotate Hook",
+                    "type": "Value",
+                    "id": "f1446b61-4538-4454-be93-8c18100ec9a2",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Crane Up and down",
+                    "type": "Value",
+                    "id": "2f0629b9-dc62-4bb1-8efa-bcf5c2cfc276",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "90b37bb9-d91d-4268-987d-4a5aa843e7d7",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate PTC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6b3ae0a-ec18-42db-9761-1c8efa1fd92b",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate PTC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa525215-5e8c-4df7-8b2a-9172edaafbda",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate Hook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d35c2bb0-2ceb-4ca9-848e-1a8415086f06",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crane Up and down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f66e859d-83d0-4a43-9ea7-e61a6a4c6d4c",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crane Up and down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
