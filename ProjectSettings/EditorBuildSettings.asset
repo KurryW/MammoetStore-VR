@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mammoet/PTC 210DS 1.unity
+    path: Assets/Scenes/Mammoet/Old/PTC 210DS 1.unity
     guid: 3f879f8fb9bd5a142ba2a4b82bda031e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5861c8843323b70469ab6e4102e38270, type: 2}
