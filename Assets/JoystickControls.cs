@@ -6,29 +6,33 @@ public class JoystickControls : MonoBehaviour
     private JoystickController controls; // Reference to the generated Input Actions class
 
     public Transform craneBase;  // Assign the base of the crane to rotate
-    public Transform hook;       // Assign the hook to rotate
     public Transform cable;      // Assign the cable or hook to move up and down
+    public Transform hookPivot;
 
-    public float rotationSpeed = 50f;  // Speed for rotating the crane and hook
+    public float rotationSpeed = 20f;  // Speed for rotating the crane and hook
     public float cableSpeed = 5f;      // Speed for moving the cable up/down
 
-    private Vector2 rotateCraneInput;
-    private Vector2 rotateHookInput;
+    private float rotateCraneInput;
+    private float rotateHookInput;
     private float cableInput;
+
+    
 
     void Awake()
     {
         controls = new JoystickController(); // Instantiate the input system
+        float hookInput = controls.Gameplay.RotateHook.ReadValue<float>();
 
         // Bind joystick actions
-        controls.Gameplay.RotatePTC.performed += ctx => rotateCraneInput = ctx.ReadValue<Vector2>();
-        controls.Gameplay.RotatePTC.canceled += ctx => rotateCraneInput = Vector2.zero;
 
-        controls.Gameplay.RotateHook.performed += ctx => rotateHookInput = ctx.ReadValue<Vector2>();
-        controls.Gameplay.RotateHook.canceled += ctx => rotateHookInput = Vector2.zero;
+        controls.Gameplay.RotatePTC.performed += ctx => rotateCraneInput = ctx.ReadValue<float>();
+        controls.Gameplay.RotatePTC.canceled += ctx => rotateCraneInput = 0f;
 
-        controls.Gameplay.CraneUpanddown.performed += ctx => cableInput = ctx.ReadValue<float>();
-        controls.Gameplay.CraneUpanddown.canceled += ctx => cableInput = 0f;
+        controls.Gameplay.RotateHook.performed += ctx => rotateHookInput = ctx.ReadValue<float>();
+        controls.Gameplay.RotateHook.canceled += ctx => rotateHookInput = 0f;
+
+        controls.Gameplay.CableUpanddown.performed += ctx => cableInput = ctx.ReadValue<float>();
+        controls.Gameplay.CableUpanddown.canceled += ctx => cableInput = 0f;
     }
 
     void OnEnable() => controls.Gameplay.Enable();
@@ -37,15 +41,16 @@ public class JoystickControls : MonoBehaviour
     void Update()
     {
         // Rotate the crane
-        if (rotateCraneInput.x != 0)
+        if (rotateCraneInput != 0)
         {
-            craneBase.Rotate(Vector3.up * rotateCraneInput.x * rotationSpeed * Time.deltaTime);
+            craneBase.Rotate(Vector3.up * rotateCraneInput * rotationSpeed * Time.deltaTime);
         }
 
         // Rotate the hook
-        if (rotateHookInput.x != 0)
+        if (rotateHookInput != 0)
         {
-            hook.Rotate(Vector3.forward * rotateHookInput.x * rotationSpeed * Time.deltaTime);
+            hookPivot.Rotate(Vector3.up * rotateHookInput * rotationSpeed * Time.deltaTime);
+
         }
 
         // Move the cable up and down

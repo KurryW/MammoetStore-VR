@@ -9,7 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Mammoet/Old/PTC 210DS 1.unity
     guid: 3f879f8fb9bd5a142ba2a4b82bda031e
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5861c8843323b70469ab6e4102e38270, type: 2}
-    com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: 651c3b56767fa1747bb15a02a7ef0d5d, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f36589d79487fe1469e3d112aa92357b, type: 2}
+    com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: e8bbd0e0c9f8c664192ab201a6522171, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 477e5a26176bbef44af1cf4a6ef1af38, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4afaf9223db5a1e4d97cb3a230314d02, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d3e7b7ce2338afe4a92b3ff174daa77d, type: 2}

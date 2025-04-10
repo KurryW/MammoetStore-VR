@@ -29,27 +29,27 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Rotate PTC"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""1b781cbd-a985-4747-a493-bc7ca19941dc"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Rotate Hook"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""f1446b61-4538-4454-be93-8c18100ec9a2"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Crane Up and down"",
-                    ""type"": ""Value"",
+                    ""name"": ""Cable Up and down"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""2f0629b9-dc62-4bb1-8efa-bcf5c2cfc276"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -57,59 +57,103 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""90b37bb9-d91d-4268-987d-4a5aa843e7d7"",
-                    ""path"": ""<Joystick>/stick/left"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""d081a253-ee7e-4ef0-8c21-bd923e22755d"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotate PTC"",
-                    ""isComposite"": false,
+                    ""action"": ""Rotate Hook"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""b6b3ae0a-ec18-42db-9761-1c8efa1fd92b"",
-                    ""path"": ""<Joystick>/stick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate PTC"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""aa525215-5e8c-4df7-8b2a-9172edaafbda"",
-                    ""path"": ""<Joystick>/trigger"",
+                    ""name"": ""negative"",
+                    ""id"": ""f6893f6f-c14e-4582-bed8-ed4c01142d1d"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Rotate Hook"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""d35c2bb0-2ceb-4ca9-848e-1a8415086f06"",
-                    ""path"": ""<Joystick>/stick/up"",
+                    ""name"": ""positive"",
+                    ""id"": ""59f04b57-4495-4e13-9ea6-58bec28f28ad"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/button2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Crane Up and down"",
+                    ""action"": ""Rotate Hook"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""f66e859d-83d0-4a43-9ea7-e61a6a4c6d4c"",
-                    ""path"": ""<Joystick>/stick/down"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1ca4016f-2be8-4f6f-b49f-b6ef0170c74c"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Crane Up and down"",
-                    ""isComposite"": false,
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fcbc3963-38c4-468f-895d-bc4a59945627"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""fd823a02-4bd7-4542-86ac-2182535f981f"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9e54433b-6439-42b3-91fe-154577724bd4"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""c884dc70-f6cf-47a7-8e3a-a761291ccf7c"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e77dda47-85cc-4e9f-9688-f1ef8e3f8cf3"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -120,7 +164,7 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_RotatePTC = m_Gameplay.FindAction("Rotate PTC", throwIfNotFound: true);
         m_Gameplay_RotateHook = m_Gameplay.FindAction("Rotate Hook", throwIfNotFound: true);
-        m_Gameplay_CraneUpanddown = m_Gameplay.FindAction("Crane Up and down", throwIfNotFound: true);
+        m_Gameplay_CableUpanddown = m_Gameplay.FindAction("Cable Up and down", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -184,14 +228,14 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_RotatePTC;
     private readonly InputAction m_Gameplay_RotateHook;
-    private readonly InputAction m_Gameplay_CraneUpanddown;
+    private readonly InputAction m_Gameplay_CableUpanddown;
     public struct GameplayActions
     {
         private @JoystickController m_Wrapper;
         public GameplayActions(@JoystickController wrapper) { m_Wrapper = wrapper; }
         public InputAction @RotatePTC => m_Wrapper.m_Gameplay_RotatePTC;
         public InputAction @RotateHook => m_Wrapper.m_Gameplay_RotateHook;
-        public InputAction @CraneUpanddown => m_Wrapper.m_Gameplay_CraneUpanddown;
+        public InputAction @CableUpanddown => m_Wrapper.m_Gameplay_CableUpanddown;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -207,9 +251,9 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             @RotateHook.started += instance.OnRotateHook;
             @RotateHook.performed += instance.OnRotateHook;
             @RotateHook.canceled += instance.OnRotateHook;
-            @CraneUpanddown.started += instance.OnCraneUpanddown;
-            @CraneUpanddown.performed += instance.OnCraneUpanddown;
-            @CraneUpanddown.canceled += instance.OnCraneUpanddown;
+            @CableUpanddown.started += instance.OnCableUpanddown;
+            @CableUpanddown.performed += instance.OnCableUpanddown;
+            @CableUpanddown.canceled += instance.OnCableUpanddown;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -220,9 +264,9 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             @RotateHook.started -= instance.OnRotateHook;
             @RotateHook.performed -= instance.OnRotateHook;
             @RotateHook.canceled -= instance.OnRotateHook;
-            @CraneUpanddown.started -= instance.OnCraneUpanddown;
-            @CraneUpanddown.performed -= instance.OnCraneUpanddown;
-            @CraneUpanddown.canceled -= instance.OnCraneUpanddown;
+            @CableUpanddown.started -= instance.OnCableUpanddown;
+            @CableUpanddown.performed -= instance.OnCableUpanddown;
+            @CableUpanddown.canceled -= instance.OnCableUpanddown;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -244,6 +288,6 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
     {
         void OnRotatePTC(InputAction.CallbackContext context);
         void OnRotateHook(InputAction.CallbackContext context);
-        void OnCraneUpanddown(InputAction.CallbackContext context);
+        void OnCableUpanddown(InputAction.CallbackContext context);
     }
 }
