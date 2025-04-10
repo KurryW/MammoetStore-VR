@@ -56,7 +56,7 @@ public class JoystickControls : MonoBehaviour
         // Move the cable up and down
         if (cableInput != 0)
         {
-            cable.Translate(Vector3.up * cableInput * cableSpeed * Time.deltaTime);
+            cable.localPosition += Vector3.up * cableInput * cableSpeed * Time.deltaTime;
         }
     }
 }

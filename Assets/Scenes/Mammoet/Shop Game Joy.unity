@@ -2874,7 +2874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craneBase: {fileID: 128541109}
-  cable: {fileID: 4592139528955009099}
+  cable: {fileID: 5390130905573665387}
   hookPivot: {fileID: 1831191493}
   rotationSpeed: 20
   cableSpeed: 5
@@ -27644,7 +27644,7 @@ SkinnedMeshRenderer:
   - {fileID: 5390130905573665387}
   - {fileID: 4592139528955009099}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 4592139528955009099}
+  m_RootBone: {fileID: 5390130905573665387}
   m_AABB:
     m_Center: {x: 0.00012972951, y: -59.633224, z: 0.000022888184}
     m_Extent: {x: 0.53125787, y: 60.1584, z: 1.1092224}
