@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Restart ",
+                    "type": "Button",
+                    "id": "b3cd1362-5898-442a-8ae3-4408b400f717",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -132,6 +141,17 @@
                     "action": "Rotate PTC",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c5123ef5-506f-409b-be44-a7df1c555b3f",
+                    "path": "<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

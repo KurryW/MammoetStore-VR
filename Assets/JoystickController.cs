@@ -53,6 +53,15 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Restart "",
+                    ""type"": ""Button"",
+                    ""id"": ""b3cd1362-5898-442a-8ae3-4408b400f717"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +163,17 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate PTC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5123ef5-506f-409b-be44-a7df1c555b3f"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -165,6 +185,7 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
         m_Gameplay_RotatePTC = m_Gameplay.FindAction("Rotate PTC", throwIfNotFound: true);
         m_Gameplay_RotateHook = m_Gameplay.FindAction("Rotate Hook", throwIfNotFound: true);
         m_Gameplay_CableUpanddown = m_Gameplay.FindAction("Cable Up and down", throwIfNotFound: true);
+        m_Gameplay_Restart = m_Gameplay.FindAction("Restart ", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_RotatePTC;
     private readonly InputAction m_Gameplay_RotateHook;
     private readonly InputAction m_Gameplay_CableUpanddown;
+    private readonly InputAction m_Gameplay_Restart;
     public struct GameplayActions
     {
         private @JoystickController m_Wrapper;
@@ -236,6 +258,7 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
         public InputAction @RotatePTC => m_Wrapper.m_Gameplay_RotatePTC;
         public InputAction @RotateHook => m_Wrapper.m_Gameplay_RotateHook;
         public InputAction @CableUpanddown => m_Wrapper.m_Gameplay_CableUpanddown;
+        public InputAction @Restart => m_Wrapper.m_Gameplay_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -254,6 +277,9 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             @CableUpanddown.started += instance.OnCableUpanddown;
             @CableUpanddown.performed += instance.OnCableUpanddown;
             @CableUpanddown.canceled += instance.OnCableUpanddown;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -267,6 +293,9 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
             @CableUpanddown.started -= instance.OnCableUpanddown;
             @CableUpanddown.performed -= instance.OnCableUpanddown;
             @CableUpanddown.canceled -= instance.OnCableUpanddown;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -289,5 +318,6 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
         void OnRotatePTC(InputAction.CallbackContext context);
         void OnRotateHook(InputAction.CallbackContext context);
         void OnCableUpanddown(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

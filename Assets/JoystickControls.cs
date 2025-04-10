@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class JoystickControls : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class JoystickControls : MonoBehaviour
     private float rotateCraneInput;
     private float rotateHookInput;
     private float cableInput;
+    private float restartInput;
 
     
 
@@ -22,6 +24,7 @@ public class JoystickControls : MonoBehaviour
     {
         controls = new JoystickController(); // Instantiate the input system
         float hookInput = controls.Gameplay.RotateHook.ReadValue<float>();
+        controls.Gameplay.Restart.performed += ctx => RestartScene();
 
         // Bind joystick actions
 
@@ -58,6 +61,13 @@ public class JoystickControls : MonoBehaviour
         {
             cable.localPosition += Vector3.up * cableInput * cableSpeed * Time.deltaTime;
         }
+
+        
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene("Shop Game Joy");
     }
 }
 
