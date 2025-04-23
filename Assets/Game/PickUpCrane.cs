@@ -13,12 +13,16 @@ public class PickUpCrane : MonoBehaviour
 
     public GameObject kabel;
     public GameObject PickupUI;
+    public GameObject Cube;
+
+    public float heightCorrection;
 
     private void Awake()
     {
         controls = new JoystickController();
 
         kabel.SetActive(false);
+        PickupUI.SetActive(false);
 
         if (rend != null)
         {
@@ -76,10 +80,10 @@ public class PickUpCrane : MonoBehaviour
         {
             // Reparent the object to this hook (or your crane / hand)
             pendingObjectToPickUp.transform.SetParent(transform);
-            Debug.Log("Picked up: " + pendingObjectToPickUp.name);
 
-            // Optionally reset position relative to parent
-            pendingObjectToPickUp.transform.localPosition = Vector3.zero;
+            pendingObjectToPickUp.transform.localPosition = new Vector3(0, heightCorrection, 0);
+            
+            Debug.Log("Picked up: " + pendingObjectToPickUp.name);
 
             // Clear reference so it doesn't pick the same thing again
             pendingObjectToPickUp = null;
@@ -87,6 +91,8 @@ public class PickUpCrane : MonoBehaviour
             rend.material.color = new Color(0, 0, 0);
 
             kabel.SetActive(true);
+
+            Destroy(Cube);
 
         }
         else
