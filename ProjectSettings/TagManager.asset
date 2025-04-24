@@ -7,6 +7,8 @@ TagManager:
   - Button
   - Teleport
   - Climbable
+  - Ground
+  - Container
   layers:
   - Default
   - TransparentFX

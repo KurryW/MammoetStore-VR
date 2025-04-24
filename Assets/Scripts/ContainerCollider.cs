@@ -2,48 +2,64 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class ContainerCollider : MonoBehaviour
 {
-	private MeshRenderer _renderer;
-    public XRBaseController leftController;
-    public XRBaseController rightController;
+    public int maxHearts = 3;
+    private int currentHearts;
 
-    private void Awake()
-	{
-		_renderer = GetComponent<MeshRenderer>();
-		OnCollisionExit(null);
+    public Image[] heartImages; // Assign your heart UI images here in the Inspector
+    public Sprite fullHeart;    // Sprite for full heart
+    public Sprite emptyHeart;   // Sprite for empty heart
 
+    public float hitCooldown = 1f; // seconds between heart losses
+    private float lastHitTime = -999f;
+
+    void Start()
+    {
+        currentHearts = maxHearts;
     }
-	private void OnCollisionEnter(Collision collision)
-	{
-		_renderer.material.color = new Color(
-			_renderer.material.color.r,
-			_renderer.material.color.g,
-			_renderer.material.color.b,
-			.5f);
- 
-		// Trigger haptic feedback on both controllers 
-		if (leftController != null)
-		{
-			leftController.SendHapticImpulse(0.5f, 0.3f); // Intensity and duration
-		}
 
-		if (rightController != null)
-		{
-			rightController.SendHapticImpulse(0.5f, 0.5f); // Intensity and duration
-		}
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Container")) // or "Ground"
+        {
+            if (Time.time - lastHitTime > hitCooldown && currentHearts > 0)
+            {
+                currentHearts--;
+                lastHitTime = Time.time;
+                UpdateHeartsUI();
+                Debug.Log("Crashed! Hearts left: " + currentHearts);
 
+                if (currentHearts <= 0)
+                {
+                    RestartGame();
+                }
+            }
+        }
 
-	}
+        void UpdateHeartsUI()
+        {
+            for (int i = 0; i < heartImages.Length; i++)
+            {
+                if (i < currentHearts)
+                {
+                    heartImages[i].sprite = fullHeart;
+                }
+                else
+                {
+                    heartImages[i].sprite = emptyHeart;
+                }
+            }
+        }
 
-	private void OnCollisionExit(Collision collision)
-	{
-		_renderer.material.color = new Color(
-				_renderer.material.color.r,
-				_renderer.material.color.g,
-				_renderer.material.color.b,
-				0);
-	}
+        void RestartGame()
+        {
+            Debug.Log("No hearts left. Restarting game...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 }

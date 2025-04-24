@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mammoet/Old/PTC 210DS 1.unity
-    guid: 3f879f8fb9bd5a142ba2a4b82bda031e
+    path: Assets/Scenes/Mammoet/Shop Game Joy.unity
+    guid: 86e3f30984865ad4385fde61014bb882
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f36589d79487fe1469e3d112aa92357b, type: 2}
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: e8bbd0e0c9f8c664192ab201a6522171, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 477e5a26176bbef44af1cf4a6ef1af38, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4afaf9223db5a1e4d97cb3a230314d02, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5ee74fdaeec2d2c47a7d7868764d63ad, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d3e7b7ce2338afe4a92b3ff174daa77d, type: 2}

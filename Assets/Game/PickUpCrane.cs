@@ -16,10 +16,15 @@ public class PickUpCrane : MonoBehaviour
     public GameObject Cube;
 
     public float heightCorrection;
+    [SerializeField] private Transform minHeightReference;
+
+    private Rigidbody rb;
 
     private void Awake()
     {
         controls = new JoystickController();
+        rb = GetComponent<Rigidbody>();
+
 
         kabel.SetActive(false);
         PickupUI.SetActive(false);
@@ -78,11 +83,18 @@ public class PickUpCrane : MonoBehaviour
     {
         if (pendingObjectToPickUp != null)
         {
+            float minY = minHeightReference.position.y;
+            transform.position = new Vector3(
+                transform.position.x,
+                Mathf.Max(transform.position.y, minY),
+                transform.position.z
+            );
+
             // Reparent the object to this hook (or your crane / hand)
             pendingObjectToPickUp.transform.SetParent(transform);
 
             pendingObjectToPickUp.transform.localPosition = new Vector3(0, heightCorrection, 0);
-            
+
             Debug.Log("Picked up: " + pendingObjectToPickUp.name);
 
             // Clear reference so it doesn't pick the same thing again
@@ -91,8 +103,11 @@ public class PickUpCrane : MonoBehaviour
             rend.material.color = new Color(0, 0, 0);
 
             kabel.SetActive(true);
+            PickupUI.SetActive(false);
 
             Destroy(Cube);
+
+
 
         }
         else
@@ -100,4 +115,5 @@ public class PickUpCrane : MonoBehaviour
             Debug.Log("No object to pick up.");
         }
     }
+    
 }
