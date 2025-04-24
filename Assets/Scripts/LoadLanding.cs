@@ -6,6 +6,8 @@ public class LoadLanding : MonoBehaviour
 {
     #region "Variables"
     private MeshRenderer _renderer;
+
+    public GameObject UIfinish;
     #endregion
 
     #region "Unity built-in methods"
@@ -22,6 +24,8 @@ public class LoadLanding : MonoBehaviour
             _renderer.sharedMaterial.color.g,
             _renderer.sharedMaterial.color.b,
             .5f);
+
+            UIfinish.SetActive(true);
         }
         else
         {
@@ -31,6 +35,9 @@ public class LoadLanding : MonoBehaviour
             _renderer.sharedMaterial.color.b,
             0);
         }
+
+        UIfinish.SetActive(false);
+
     }
     private void OnCollisionEnter(Collision collision)
     {
