@@ -9,6 +9,8 @@ TagManager:
   - Climbable
   - Ground
   - Container
+  - Crane
+  - Cube box outline
   layers:
   - Default
   - TransparentFX

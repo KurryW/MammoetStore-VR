@@ -5,26 +5,49 @@ using UnityEngine;
 public class CraneClamp : MonoBehaviour
 {
     public Transform craneRoot; // Drag the crane's real parent here in the Inspector
+    public Transform hook;
     public float minDistanceFromGround = 0.05f; // Minimum height above ground
     public float raycastLength = 1f; // How far down to check for the ground
 
     void Update()
     {
-        Debug.DrawRay(transform.position, Vector3.down * raycastLength, Color.red);
+        float maxCorrection = 0f;
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastLength))
+        // Raycast from crane base
+        RaycastHit baseHit;
+        if (Physics.Raycast(transform.position, Vector3.down, out baseHit, raycastLength))
         {
-            if (hit.collider.CompareTag("Ground"))
+            if (baseHit.collider.CompareTag("Ground"))
             {
-                float distance = hit.distance;
+                float distance = baseHit.distance;
                 if (distance < minDistanceFromGround)
                 {
-                    // Lift the crane up so the child doesn't clip into the ground
                     float correction = minDistanceFromGround - distance;
-                    craneRoot.position += new Vector3(0, correction, 0);
+                    maxCorrection = Mathf.Max(maxCorrection, correction);
                 }
             }
+        }
+
+        RaycastHit hookHit;
+        if (Physics.Raycast(hook.position, Vector3.down, out hookHit, raycastLength))
+        {
+            if (hookHit.collider.CompareTag("Ground"))
+            {
+                float distance = hookHit.distance;
+                if (distance < minDistanceFromGround)
+                {
+                    float correction = minDistanceFromGround - distance;
+                    hook.position += new Vector3(0, correction, 0);
+                }
+            }
+        }
+
+        // Apply correction to both craneRoot and hook
+        if (maxCorrection > 0f)
+        {
+            Vector3 correctionVector = new Vector3(0, maxCorrection, 0);
+            craneRoot.position += correctionVector;
+            hook.position += correctionVector; // keep in sync
         }
     }
 }
