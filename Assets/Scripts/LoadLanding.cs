@@ -14,6 +14,7 @@ public class LoadLanding : MonoBehaviour
     private void Awake()
     {
         _renderer = GetComponent<MeshRenderer>();
+        UIfinish.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -33,10 +34,12 @@ public class LoadLanding : MonoBehaviour
             _renderer.sharedMaterial.color.r,
             _renderer.sharedMaterial.color.g,
             _renderer.sharedMaterial.color.b,
-            0);
+            0);        
+            
+            UIfinish.SetActive(false);
+
         }
 
-        UIfinish.SetActive(false);
 
     }
     private void OnCollisionEnter(Collision collision)
