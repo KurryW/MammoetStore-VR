@@ -18,17 +18,23 @@ public class ContainerCollider : MonoBehaviour
     public float hitCooldown = 1f; // seconds between heart losses
     private float lastHitTime = -999f;
 
+    public GameObject redOverlay; // UI Image with red overlay (set alpha low like 0.3–0.5)
+    public GameObject warningIcon; // Some icon (exclamation mark etc.)
+    public float overlayFlashTime = 3f; // How long the red flash lasts
+
     void Start()
     {
         currentHearts = maxHearts;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Container")) // or "Ground"
         {
             if (Time.time - lastHitTime > hitCooldown && currentHearts > 0)
             {
+                StartCoroutine(FlashDamageOverlay());
+
                 currentHearts--;
                 lastHitTime = Time.time;
                 UpdateHeartsUI();
@@ -47,13 +53,24 @@ public class ContainerCollider : MonoBehaviour
             {
                 if (i < currentHearts)
                 {
-                    heartImages[i].sprite = fullHeart;
+                    heartImages[i].sprite = emptyHeart;
                 }
                 else
                 {
-                    heartImages[i].sprite = emptyHeart;
+                    heartImages[i].sprite = fullHeart;
                 }
             }
+        }
+
+        IEnumerator FlashDamageOverlay()
+        {
+            if (redOverlay != null) redOverlay.SetActive(true);
+            if (warningIcon != null) warningIcon.SetActive(true);
+
+            yield return new WaitForSeconds(overlayFlashTime);
+
+            if (redOverlay != null) redOverlay.SetActive(false);
+            if (warningIcon != null) warningIcon.SetActive(false);
         }
 
         void RestartGame()
