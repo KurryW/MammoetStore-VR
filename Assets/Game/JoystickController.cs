@@ -108,6 +108,39 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis keyboard"",
+                    ""id"": ""da95068c-e436-431c-90c1-5b6ba18db93e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate Hook"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fa18f224-9f41-4bcf-aec2-3d56dd077afa"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate Hook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4c3f0f86-d1b2-432a-8192-39441d0a187c"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate Hook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""1D Axis"",
                     ""id"": ""1ca4016f-2be8-4f6f-b49f-b6ef0170c74c"",
                     ""path"": ""1DAxis"",
@@ -133,6 +166,39 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""name"": ""positive"",
                     ""id"": ""fd823a02-4bd7-4542-86ac-2182535f981f"",
                     ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""c8df373a-fd7b-4347-bc21-a3cea1cb0472"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e8e0a4fc-bdfa-48e6-b0f7-6e7673409e55"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cable Up and down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ed861373-4b3a-4b93-b5ad-d7c14a2d451b"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -174,6 +240,39 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis keyboard"",
+                    ""id"": ""54c7b30e-be1e-45de-bc1e-393f64e88eeb"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c337b17b-349f-4cab-afdd-07b39bd0d233"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""961b9268-f263-4393-8d71-72eea6034f2e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate PTC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""c5123ef5-506f-409b-be44-a7df1c555b3f"",
                     ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/button4"",
@@ -188,6 +287,17 @@ public partial class @JoystickController: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""1a7707c9-36a4-4a1b-8016-8deec124be02"",
                     ""path"": ""<HID::MY-POWER CO.,LTD. SPEEDLINK COMPETITION PRO>/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98e01d4e-a273-40da-b3d1-ccec8c3d491a"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
